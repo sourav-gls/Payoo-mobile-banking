@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payoo|Login</title>
+    <title>Payoo|Home</title>
     <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 
     <!-- tailwind and daisyUI -->
@@ -30,7 +30,7 @@
     </style>
 </head>
 <body class=" min-h-screen max-w-md bg-base-200 mx-auto">
-    <header class="border-b-2 border-gray-300">
+    <header class="border-b-2 border-gray-300 sticky top-0 bg-base-200 z-10">
         <section class="w-11/12 mx-auto py-3 flex justify-between items-center">
             <div class="left flex gap-1">
                 <div class="logo w-[60px]">
@@ -80,5 +80,66 @@
         </div>
 
     </section>
+    <section id="Add-money" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Add Money</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">Select a Bank</label>
+          <input type="text" id="add-bank" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold">Bank Account Number</label>
+          <input type="text" id="add-number" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit account number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold" id="">Amount to Add</label>
+          <input id="add-amount" type="number" class="input w-full rounded-full  bg-base-200" placeholder="Enter amount to add" />
+
+          <br>
+
+          
+          <label class="label text-neutral font-bold" id="">Pin Number</label>
+          <input id="add-pin" type="" class="input w-full rounded-full  bg-base-200" placeholder="Enter 4 digit pin number" />
+         
+          <button id="add-btn" class="btn btn-primary mt-4 rounded-full w-full ">Add Money</button>
+        </fieldset>
+      </div>
+    </div>
+
+    </div>
+    </section>
+    <section id="Cashout" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Cashout</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">Agent Number</label>
+          <input type="text" id="cashout-number" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold" id="">Amount</label>
+          <input id="cashout-amount" type="number" class="input w-full rounded-full  bg-base-200" placeholder="Enter amount to withdraw" />
+
+          <br>
+
+          
+          <label class="label text-neutral font-bold" id="">Pin Number</label>
+          <input id="cashout-pin" type="password" class="input w-full rounded-full  bg-base-200" placeholder="Enter 4 digit pin number" />
+         
+          <button id="cashout-btn" class="btn btn-primary mt-4 rounded-full w-full ">Withdraw Money</button>
+        </fieldset>
+      </div>
+    </div>
+
+    </div>
+    </section>
+
+    <script src="./scripts/machine.js"></script>
+    <script src="./scripts/add.js"></script>
+    <script src="./scripts/cashout.js"></script>
 </body>
 </html>
