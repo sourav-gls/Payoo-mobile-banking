@@ -53,34 +53,35 @@
         <p class="text-neutral/50">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
 
         <div class="buttons grid grid-cols-3 gap-3">
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('add-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-1.png" alt="">
                 <p>Add Money</p>
             </div>
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('cashout')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </div>
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('send-money')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-3.png" alt="">
                 <p>Send Money</p>
             </div>
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('get-bonus')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-4.png" alt="">
                 <p>Get Bonus</p>
             </div>
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('pay-bill')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </div>
-            <div class="btn flex-col h-full py-4 btn-primary btn-soft">
+            <div onclick="showOnly('t-history')" class="btn flex-col h-full py-4 btn-primary btn-soft">
                 <img src="./assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </div>
         </div>
 
     </section>
-    <section id="Add-money" class="w-11/12 mx-auto py-5 ">
+  <section id="form-container" class="hidden">
+      <section id="add-money" class="w-11/12 mx-auto py-5 ">
         <h2 class="text-xl font-bold mb-5">Add Money</h2>
         <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
       <div class="card-body">
@@ -110,8 +111,8 @@
     </div>
 
     </div>
-    </section>
-    <section id="Cashout" class="w-11/12 mx-auto py-5 ">
+      </section>
+      <section id="cashout" class="w-11/12 mx-auto py-5 ">
         <h2 class="text-xl font-bold mb-5">Cashout</h2>
         <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
       <div class="card-body">
@@ -136,7 +137,87 @@
     </div>
 
     </div>
-    </section>
+      </section>
+      <section id="send-money" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Send money</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">User Account Number</label>
+          <input type="text" id="send-number" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold" id="">Amount</label>
+          <input id="send-amount" type="number" class="input w-full rounded-full  bg-base-200" placeholder="Enter amount to withdraw" />
+
+          <br>
+
+          
+          <label class="label text-neutral font-bold" id="">Pin Number</label>
+          <input id="send-pin" type="password" class="input w-full rounded-full  bg-base-200" placeholder="Enter 4 digit pin number" />
+         
+          <button id="send-btn" class="btn btn-primary mt-4 rounded-full w-full ">Send now</button>
+        </fieldset>
+      </div>
+    </div>
+
+    </div>
+      </section>
+      <section id="get-bonus" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Get Bonus</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">Enter Bonus Coupon</label>
+          <input type="text" id="get-bonus-number" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter Bonus Coupon" />
+
+          <button id="get-bonus-btn" class="btn btn-primary mt-4 rounded-full w-full ">Get Bonus </button>
+        </fieldset>
+      </div>
+    </div>
+
+    </div>
+      </section>
+      <section id="pay-bill" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Pay Bill</h2>
+        <div class="card bg-base-100 w-full shadow mx-auto rounded-2xl">
+      <div class="card-body">
+        <fieldset class="fieldset">
+          <label class="label text-neutral font-bold">Select to pay</label>
+          <input type="text" id="pay-bank" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold">Biller Account Number</label>
+          <input type="text" id="pay-number" maxlength="11" minlength="11" class="input w-full rounded-full bg-base-200" placeholder="Enter 11 digit account number" />
+
+          <br>
+
+          <label class="label text-neutral font-bold" id="">Amount to pay</label>
+          <input id="pay-amount" type="number" class="input w-full rounded-full  bg-base-200" placeholder="Enter amount to add" />
+
+          <br>
+
+          
+          <label class="label text-neutral font-bold" id="">Pin Number</label>
+          <input id="pay-pin" type="" class="input w-full rounded-full  bg-base-200" placeholder="Enter 4 digit pin number" />
+         
+          <button id="pay-btn" class="btn btn-primary mt-4 rounded-full w-full ">Pay Now</button>
+        </fieldset>
+      </div>
+    </div>
+
+    </div>
+      </section>
+      <section id="t-history" class="w-11/12 mx-auto py-5 ">
+        <h2 class="text-xl font-bold mb-5">Transactions</h2>
+         <div id="history-container" class="">
+         </div>
+      </section>
+  </section>
+
+  
 
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/add.js"></script>
